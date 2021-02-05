@@ -20,4 +20,8 @@ class BarangController extends Controller
         $test = 'ea';
         return view('greetings',compact('namaDepan','namaBelakang','id'));
     }
+
+    public function testBranch(){
+        return 'ea';
+    }
 }
