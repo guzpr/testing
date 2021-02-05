@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HelloController;
+use App\Http\Controllers\BarangController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,18 +15,11 @@ use App\Http\Controllers\HelloController;
 */
 
 Route::get('/', function () {
-    return 'Hello World';
+    return 'String yang lain';
 });
 
+Route::get('/barang',[BarangController::class,'getBarang']);
+Route::get('/barang/{id}',[BarangController::class,'getBarangById']);
 
-Route::prefix('hello')->group(function () {
-    Route::get('/controller',[HelloController::class,'hello']);
-    Route::get('/users', function () {
-        return 'user';
-        // Matches The "/admin/users" URL
-    });
-
-    Route::get('/test',function(){
-        return 'test';
-    });
-});
+Route::get('/view',[BarangController::class,'returnView']);
+Route::get('/view/{id}',[BarangController::class,'returnView']);

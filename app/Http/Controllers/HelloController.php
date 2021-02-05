@@ -8,7 +8,7 @@ class HelloController extends Controller
 {
     public function hello(){
         $name = 'Putu testing';
-        return view('hello',compact('name'));
+        return view('hello',['name'=>'Testing']);
     }
 
     
